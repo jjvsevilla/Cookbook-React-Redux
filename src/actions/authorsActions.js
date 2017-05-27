@@ -13,6 +13,9 @@ export function loadAuthors() {
     dispatch(beginAjaxCall());
     return AuthorApi.getAllAuthors()
     .then(authors => dispatch(loadAuthorsSuccess(authors)))
-    .catch(error => { throw(error); });
+    .catch(error => {
+      dispatch(ajaxCallError(error));
+      throw(error);
+    });
   };
 }

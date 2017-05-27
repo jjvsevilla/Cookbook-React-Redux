@@ -8,6 +8,7 @@ import routes from './routes';
 import { loadCourses, loadAuthors } from './actions';
 
 import '../node_modules/materialize-css/dist/css/materialize.min.css';
+import '../node_modules/toastr/build/toastr.min.css';
 import './styles/styles.css';
 
 const store = configureStore();

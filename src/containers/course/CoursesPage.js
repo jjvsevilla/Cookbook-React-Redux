@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as courseActions from '../../actions/courseActions';
 import CourseList from '../../components/course-list/CourseList';
 import { PageContainer } from '../../common';
+import autobind from 'autobind-decorator';
 
 function mapStateToProps(state, ownProps = {}){
   return {
@@ -27,10 +28,9 @@ export default class CoursesPage extends Component {
 
   constructor(props, context) {
     super(props, context);
-
-    this.redirectToAddCoursePage = this.redirectToAddCoursePage.bind(this);
   }
 
+  @autobind
   redirectToAddCoursePage() {
     browserHistory.push('/course');
   }

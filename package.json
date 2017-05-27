@@ -8,7 +8,7 @@
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
+    "test": "mocha --reporter spec tools/testSetup.js src/**/*.test.js src/components/**/*.test.js",
     "test:watch": "npm run test -- --watch"
   },
   "author": "Juan Vento",
@@ -29,6 +29,7 @@
     "toastr": "2.1.2"
   },
   "devDependencies": {
+    "autobind-decorator": "^1.4.1",
     "babel-cli": "6.8.0",
     "babel-core": "6.8.0",
     "babel-loader": "6.2.4",

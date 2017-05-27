@@ -1,6 +1,15 @@
 import React, { PropTypes, Component } from 'react';
 
-class LoadingDots extends Component {
+export default class LoadingDots extends Component {
+  static defaultProps = {
+    interval: 300, dots: 3
+  };
+
+  static propTypes = {
+    interval: PropTypes.number,
+    dots: PropTypes.number
+  };
+
   constructor(props, context) {
     super(props, context);
 
@@ -29,14 +38,3 @@ class LoadingDots extends Component {
     return <span>{text}&nbsp;</span>;
   }
 }
-
-LoadingDots.defaultProps = {
-  interval: 300, dots: 3
-};
-
-LoadingDots.propTypes = {
-  interval: PropTypes.number,
-  dots: PropTypes.number
-};
-
-export default LoadingDots;

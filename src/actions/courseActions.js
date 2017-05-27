@@ -21,7 +21,10 @@ export function loadCourses() {
     dispatch(beginAjaxCall());
     return courseApi.getAllCourses()
       .then(courses => dispatch(loadCoursesSuccess(courses)))
-      .catch(error => { throw(error); });
+      .catch(error => {
+        dispatch(ajaxCallError(error));
+        throw(error);
+      });
   };
 }
 
@@ -29,7 +32,10 @@ export function saveCourse(course) {
   return function (dispatch, getState) {
     dispatch(beginAjaxCall());
     return courseApi.saveCourse(course)
-    .then(savedCourse => dispatch(course.id ? updateCourseSuccess(savedCourse) : createCourseSuccess(savedCourse)))
-    .catch(error => { throw(error); });
+      .then(savedCourse => dispatch(course.id ? updateCourseSuccess(savedCourse) : createCourseSuccess(savedCourse)))
+      .catch(error => {
+        dispatch(ajaxCallError(error));
+        throw(error);
+      });
   };
 }
