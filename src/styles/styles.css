@@ -1,0 +1,28 @@
+/* Styles */
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#app-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #4d4d4d;
+}
+
+#app-container main {
+  flex: 1 0 auto;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+#app-container select {
+  display: inline-block;
+}
